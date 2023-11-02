@@ -31,7 +31,8 @@
 		body {
 			background-color: whitesmoke;	
 		}
-		#con {
+		
+		.con {
 			display: flex;
 			//justify-content: center;
 			margin-left: 16%;
@@ -45,7 +46,7 @@
 			box-shadow: var(--sombra);
 			//padding: 0.6em;
 			//margin: 0.6em;
-			height: 12em;
+			height: 9em;
 		}
 
 		#entra {
@@ -53,7 +54,7 @@
 			//background-color: lightgreen;	
 			//border-radius: 1em;
 			//box-shadow: var(--sombra);
-			padding: 0.6em;
+			//padding: .6em;
 			margin: 0.6em;
 		}
 		#entraD {
@@ -65,15 +66,24 @@
 			margin: 0.6em;
 			margin-left: 11em;
 		}
-
+		.ceIn {
+			//background-color: lightgreen;;
+			width: 10em;
+			//height: 8em;
+			//padding-top: 0.5em;
+			//border-radius: 1em;
+			//border: solid 1px green;
+			//margin: 0.5em;
+			text-align: center;
+		}
 		.ce {
 			//background-color: lightgreen;;
-			width: 9em;
-			//height: 8em;
-			padding-top: 0.5em;
+			width: 22em;
+			height: 4em;
+			padding-top: 0.3em;
 			border-radius: 1em;
 			border: solid 1px green;
-			margin: 0.5em;
+			margin: 0.3em;
 			text-align: center;
 		}
 		.inp {
@@ -121,6 +131,30 @@
 			margin-left: 10%;
 			color: gray;
 		}
+		
+		hr {
+			color: #eee;		
+		}
+		#nP {
+			font-size: 0.8em;
+		}
+
+/* Media Queries
+--------------------------------------------- [DAKI PRA BAIXO É O LAYOUT DISPLAY CELULAR] */
+
+/* @media é a mesma configuração, com 480px, utilizada no app Guri2*/
+@media all and (max-width : 480px) {
+
+		.con {
+			display: flex;
+			flex-direction: column-reverse;
+			//justify-content: center;
+			margin-left: 1%;
+			padding: 1em;
+		}
+
+
+}
 
 	</style>
 
@@ -137,16 +171,16 @@
 </header>
 
 
-<div id="con">	 <!-- Conteúdo -->
+<div class="con">	 <!-- Conteúdo -->
 
 	<div id="entraM">
 			<div id="entra">
-				<div class="ce">		<!-- Célula -->
+				<div class="ceIn">		<!-- Célula -->
 					<p>PRODUTO</p>
 					<input class="inp" id="pro" type="text" placeholder="">
 					<p class="pH">Digite o Preço</p>
 				</div>
-				<div class="ce">
+				<div class="ceIn">
 					<p>ENTRADA</p>
 					<input class="inp" id="ent" type="text" placeholder="">
 					<p class="pH">Digite a Entrada</p>
@@ -158,34 +192,35 @@
 
 	<div id="entra">
 			<div class="ce">
-				<pre>% DA ENTRADA</pre>
+				<pre>% DA<br>ENTRADA</pre>
 				<h3 id="por"></h3>
 			</div>
 			<div class="ce">
-				<pre>VALOR FINAL</pre>
+				<pre>VALOR<br>FINAL</pre>
 				<h3 id="vF"></h3>
 			</div>
 				<div class="ce">		<!-- Célula -->
-					<pre>DESCONTO EXTRA</pre>
+					<pre>DESCONTO<br>EXTRA</pre>
 					<h3 id="vaFim"></h3>
 				</div>
 	</div>
 
 </div>
 
+<br>
+<hr>
 
-
-<div id="con">	 <!-- Conteúdo -->
+<div class="con">	 <!-- Conteúdo -->
 					
 	<div id="entraM">
 						<div id="entra">
-								<div class="ce">
+								<div class="ceIn">
 										<p>TOTAL</p>
 										<input class="inp" id="presT" type="text" placeholder="">
 										<p class="pH">Digite um Valor</p>
 								</div>
-								<div class="ce">
-										<p>Nº DE PRESTAÇÕES</p>
+								<div class="ceIn">
+										<p id="nP" >Nº DE<br>PRESTAÇÕES</p>
 										<input class="inp" id="presP" type="text" placeholder="">
 										<p class="pH">Entrada</p>
 								</div>
@@ -195,7 +230,7 @@
 								
 						<div id="entraD">
 							<div class="ce">
-								<pre>VALOR PRESTAÇÃO</pre>
+								<pre>VALOR<br>PRESTAÇÃO</pre>
 								<h3 id="vaPres"></h3>
 							</div>
 						</div>
