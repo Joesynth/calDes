@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="#.png">
+	<link rel="stylesheet" href="#.css"/>
+	<script src="#/#.js"></script>
+
+	<style>
+
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	font-size: 0.99em;
+}
+
+:root {
+	--cor1: #0b9444;
+	--cor2: #333;
+	--cor3: #222;
+	--sombra: .1em .2em 11px #888;
+	--borda: 1em;
+	--fon2: .7em;
+	/* usado na página config, por exemplo */
+	--fon3: .6em;
+}
+
+		body {
+			background-color: whitesmoke;	
+		}
+		#con {
+			display: flex;
+			//justify-content: center;
+			margin-left: 16%;
+			padding: 1em;
+		}
+
+		#entraM {
+			//display: flex;
+			//background-color: lightgreen;	
+			border-radius: 1em;
+			box-shadow: var(--sombra);
+			//padding: 0.6em;
+			//margin: 0.6em;
+			height: 12em;
+		}
+
+		#entra {
+			display: flex;
+			//background-color: lightgreen;	
+			//border-radius: 1em;
+			//box-shadow: var(--sombra);
+			padding: 0.6em;
+			margin: 0.6em;
+		}
+		#entraD {
+			display: flex;
+			//background-color: lightgreen;	
+			//border-radius: 1em;
+			//box-shadow: var(--sombra);
+			padding: 0.6em;
+			margin: 0.6em;
+			margin-left: 11em;
+		}
+
+		.ce {
+			//background-color: lightgreen;;
+			width: 9em;
+			//height: 8em;
+			padding-top: 0.5em;
+			border-radius: 1em;
+			border: solid 1px green;
+			margin: 0.5em;
+			text-align: center;
+		}
+		.inp {
+			width: 5em;	
+			border-radius: .5em;
+			font-size: 1.2em;
+			text-align: center;
+			color: blue;
+		}
+		.pH {
+			color: #aaa;
+			font-size: .8em;
+		}
+		.bt {
+		width: 5em;
+		//height: 5em;
+		//border-radius: 50%;
+		//box-shadow: var(--sombra);
+		margin-left: 66%;
+		//border: none;
+		color: blue;
+		text-transform: uppercase;
+		}
+		p {
+			color: green;
+			font-weight: bold;
+			font-size: 0.9em;
+			margin-bottom: 1em;
+		}
+		header {
+			height: 4em;
+			background-color: lightgreen;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			border-bottom:  solid 1px lightgray;
+		}
+		footer {
+			border-top:  solid 1px lightgray;
+			padding-top: 0.5em;
+			margin-top: 2em;
+		}
+		small {
+			font-size: 0.7em;
+			margin-left: 10%;
+			color: gray;
+		}
+
+	</style>
+
+
+
+</head>
+<body>
+<header>
+
+	<p>Logo Sua Empresa.</p>
+	<p>Tel: 99 9999-99999.</p>
+
+
+</header>
+
+
+<div id="con">	 <!-- Conteúdo -->
+
+	<div id="entraM">
+			<div id="entra">
+				<div class="ce">		<!-- Célula -->
+					<p>PRODUTO</p>
+					<input class="inp" id="pro" type="text" placeholder="">
+					<p class="pH">Digite o Preço</p>
+				</div>
+				<div class="ce">
+					<p>ENTRADA</p>
+					<input class="inp" id="ent" type="text" placeholder="">
+					<p class="pH">Digite a Entrada</p>
+				</div>
+			</div>	
+				<input class="bt" id="bt" type="button" onClick="multiplyBy()" Value="Ok!" />
+	</div>
+		
+
+	<div id="entra">
+			<div class="ce">
+				<pre>% DA ENTRADA</pre>
+				<h3 id="por"></h3>
+			</div>
+			<div class="ce">
+				<pre>VALOR FINAL</pre>
+				<h3 id="vF"></h3>
+			</div>
+				<div class="ce">		<!-- Célula -->
+					<pre>DESCONTO EXTRA</pre>
+					<h3 id="vaFim"></h3>
+				</div>
+	</div>
+
+</div>
+
+
+
+<div id="con">	 <!-- Conteúdo -->
+					
+	<div id="entraM">
+						<div id="entra">
+								<div class="ce">
+										<p>TOTAL</p>
+										<input class="inp" id="presT" type="text" placeholder="">
+										<p class="pH">Digite um Valor</p>
+								</div>
+								<div class="ce">
+										<p>Nº DE PRESTAÇÕES</p>
+										<input class="inp" id="presP" type="text" placeholder="">
+										<p class="pH">Entrada</p>
+								</div>
+						</div>
+						<input class="bt" id="bt2" type="button" onClick="multiplyBy2()" Value="Ok!" />
+	</div>				
+								
+						<div id="entraD">
+							<div class="ce">
+								<pre>VALOR PRESTAÇÃO</pre>
+								<h3 id="vaPres"></h3>
+							</div>
+						</div>
+
+</div>
+
+
+<footer>
+	<small>Criado por JoeSynth.wordpress.com</small>
+</footer>
+
+<!-- PARCELAS -->
+
+
+				<script type="text/javascript">
+
+/*
+INPUTS, id
+pro
+ent
+presT
+presP
+
+
+*/
+
+				//var prod = parseInt(document.getElementById('pro').value);
+				//var entr = parseInt(document.getElementById('ent').value);
+
+
+				/*
+				vF.innerHTML = pro - en;
+				
+				
+				var tPres = document.querySelector("#tPres");
+				tPres.innerHTML = vF / nuPar;
+				*/
+				
+				var prod = document.getElementById("pro").value;
+				var ent = document.getElementById("en").value;
+
+
+				var vFva = document.getElementById("vF").value;
+
+
+				function multiplyBy()
+				{
+						var prod = document.getElementById("pro").value;
+						var entr = document.getElementById("ent").value;
+
+				        document.getElementById("por").innerHTML = entr * 100 / prod;
+				        document.getElementById("vF").innerHTML = prod - entr;
+				        var p = parseInt(prod);
+				        var e = parseInt(entr);
+				        document.getElementById("vaFim").innerHTML = p - (p * 0.1) - e;
+				}
+
+				function multiplyBy2()
+				{
+							var presT = document.querySelector("#presT").value;
+							var presP = document.querySelector("#presP").value;
+				        document.getElementById("vaPres").innerHTML = presT / presP;
+				        //document.getElementById("vF2").innerHTML = vaFim / pres ;
+				}
+				
+				
+/*
+var qua = document.querySelector("#qua");
+if (par > 0 && par < 2) {
+qua.innerHTML = "0";
+}
+if (par > 3 && par < 99) {
+qua.innerHTML = "1";
+}
+
+
+if (en > 0 && en < 250) {
+	alert("pouco");
+}
+if (en > 251 && en < 500) {
+	alert("muito");
+}
+*/
+				</script>
+
+
+
+
+
+</body>
+</html>
