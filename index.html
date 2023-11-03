@@ -14,7 +14,8 @@
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
-	font-size: 0.99em;
+	font-size: 1em;
+	font-family: arial;
 }
 
 :root {
@@ -36,7 +37,7 @@
 			display: flex;
 			justify-content: center;
 			//margin-left: 16%;
-			padding: 1em;
+			padding-top: 1em;
 			box-shadow: var(--sombra);
 			border-radius: 1em;
 			margin: 1em;
@@ -82,31 +83,36 @@
 		}
 		.ce {
 			//background-color: lightgreen;;
-			width: 16em;
-			height: 4em;
+			width: 11em;
+			height: 6em;
 			padding-top: 0.3em;
-			border-radius: 1em;
-			border: solid 1px green;
+			border-radius: .5em;
+			border: solid 1px lightgray;
 			margin: 0.3em;
 			text-align: center;
 		}
+		.ce p {
+			color: green;
+			font-size: 0.8em;	
+		}
 		.inp {
-			width: 5em;	
+			width: 6em;	
 			border-radius: .5em;
-			font-size: 1.2em;
+			font-size: 1.3em;
 			text-align: center;
 			color: blue;
 		}
-		.pH {
-			color: #aaa;
-			font-size: .8em;
+		.inp::placeholder {
+			font-size: 0.6em;
+			color: #333;
 		}
 		.bt {
 		width: 5em;
 		//height: 5em;
 		//border-radius: 50%;
 		//box-shadow: var(--sombra);
-		margin-left: 66%;
+		margin-left: 63%;
+		margin-top: 1em;
 		//border: none;
 		color: blue;
 		text-transform: uppercase;
@@ -137,9 +143,7 @@
 		}
 		
 
-		#nP {
-			font-size: 0.8em;
-		}
+
 
 /* Media Queries
 --------------------------------------------- [DAKI PRA BAIXO É O LAYOUT DISPLAY CELULAR] */
@@ -150,7 +154,7 @@
 		.con {
 			flex-direction: column-reverse;
 			//justify-content: center;
-			width: 80%;
+			width: 90%;
 			margin-left: 5%;
 		}
 
@@ -173,70 +177,62 @@
 
 
 <div class="con">	 <!-- Conteúdo -->
-
 	<div id="entraM">
 			<div id="entra">
 				<div class="ceIn">		<!-- Célula -->
 					<p>PRODUTO</p>
-					<input class="inp" id="pro" type="text" placeholder="" onfocus="this.value=''">
-					<p class="pH">Digite o Preço</p>
+					<input class="inp" id="pro" type="text" placeholder="Digite o Preço" onfocus="this.value=''">
 				</div>
 				<div class="ceIn">
 					<p>ENTRADA</p>
-					<input class="inp" id="ent" type="text" placeholder="" onfocus="this.value=''">
-					<p class="pH">Digite a Entrada</p>
+					<input class="inp" id="ent" type="text" placeholder="Digite a Entrada" onfocus="this.value=''">
 				</div>
 			</div>	
 				<input class="bt" id="bt" type="button" onClick="multiplyBy()" Value="Ok!" />
 	</div>
-		
-
 	<div id="entra">
 			<div class="ce">
-				<pre>% DA<br>ENTRADA</pre>
+				<p>Porcentagem<br>da Entrada</p>
 				<h3 id="por"></h3>
 			</div>
 			<div class="ce">
-				<pre>VALOR<br>FINAL</pre>
+				<p>Valor<br>Restante</p>
 				<h3 id="vF"></h3>
 			</div>
 				<div class="ce">		<!-- Célula -->
-					<pre>DESCONTO<br>EXTRA</pre>
+					<p>Desconto<br>Extra</p>
 					<h3 id="vaFim"></h3>
 				</div>
 	</div>
-
 </div>
 
-<br>
+
+
 
 
 <div class="con">	 <!-- Conteúdo -->
-					
 	<div id="entraM">
-						<div id="entra">
+			<div id="entra">
 								<div class="ceIn">
 										<p>TOTAL</p>
-										<input class="inp" id="presT" type="text" placeholder="" onfocus="this.value=''">
-										<p class="pH">Digite um Valor</p>
+										<input class="inp" id="presT" type="text" placeholder="Digite um Valor" onfocus="this.value=''">
 								</div>
 								<div class="ceIn">
-										<p id="nP" >Nº DE<br>PRESTAÇÕES</p>
-										<input class="inp" id="presP" type="text" placeholder="" onfocus="this.value=''">
-										<p class="pH">Entrada</p>
+										<p id="nP" >Nº PRESTAÇÕES</p>
+										<input class="inp" id="presP" type="text" placeholder="Nº de Prestações" onfocus="this.value=''">
 								</div>
-						</div>
+			</div>
 						<input class="bt" id="bt2" type="button" onClick="multiplyBy2()" Value="Ok!" />
 	</div>				
-								
-						<div id="entraD">
+			<div id="entraD">
 							<div class="ce">
-								<pre>VALOR<br>PRESTAÇÃO</pre>
+								<p>Valor<br>Prestação</p>
 								<h3 id="vaPres"></h3>
 							</div>
-						</div>
-
+			</div>
 </div>
+
+
 
 
 <footer>
