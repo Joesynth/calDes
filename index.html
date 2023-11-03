@@ -278,7 +278,10 @@ presP
 						var prod = document.getElementById("pro").value;
 						var entr = document.getElementById("ent").value;
 
-				        document.getElementById("por").innerHTML = entr * 100 / prod;
+				        var por = document.getElementById("por");
+							var porC = 	entr * 100 / prod;			        
+				        por.innerHTML = porC.toFixed();
+				        
 				        document.getElementById("vF").innerHTML = prod - entr;
 				        var p = parseInt(prod);
 				        var e = parseInt(entr);
@@ -289,7 +292,9 @@ presP
 				{
 							var presT = document.querySelector("#presT").value;
 							var presP = document.querySelector("#presP").value;
-				        document.getElementById("vaPres").innerHTML = presT / presP;
+							var vaPres = document.getElementById("vaPres");
+							var vaPresC = presT / presP;
+							vaPres.innerHTML = vaPresC.toFixed(2);
 				        //document.getElementById("vF2").innerHTML = vaFim / pres ;
 				}
 				
